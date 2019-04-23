@@ -5,28 +5,42 @@ Released for free under a Creative Commons Attribution 3.0 License
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>个人博客</title>
+<title>Poor Boy's Blog</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <!-- CuFon: Enables smooth pretty custom font rendering. 100% SEO friendly. To disable, remove this section -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/clock-canvas.min.js"></script>
 <script type="text/javascript" src="js/cufon-yui.js"></script>
 <script type="text/javascript" src="js/georgia.js"></script>
 <script type="text/javascript" src="js/cuf_run.js"></script>
-<!-- CuFon ends -->
+<script type="text/javascript">
+	$(function() {
+   	 	$("#clock").drawClock(
+            //{
+                // hCol: 'xxx',// 时针颜色
+                // mCol: 'xxx', // 时针颜色
+                // sCol: 'xxx', // 时针颜色
+                // isNumCol: 'xxx', // 数字所在的点颜色
+                // noNumCol: 'xxx', // 非数字所在的点颜色
+                // dCol: 'xxx', // 中心圈颜色
+            //}
+        );
+    })
+</script>
 </head>
 <body>
 <div class="main">
 
   <div class="header">
     <div class="header_resize">
-      <div class="logo"><h1><a href="index.html">FantasyLand<br /><small>put your slogan here</small></a></h1></div>
+      <div class="logo"><h1><a href="index.html">Poor Boy<br /></a></h1></div>
       <div class="menu_nav">
         <ul>
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="support.html">Support</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li class="active"><a href="index.html">首页</a></li>
+          <li><a href="blog.html">博客</a></li>
+          <li><a href="about.html">关于</a></li>
+          <li><a href="contact.html">联系</a></li>
         </ul>
         <div class="clr"></div>
       </div>
@@ -57,18 +71,13 @@ which means that you are free to use it for any personal or commercial purpose p
       </div>
       <div class="sidebar">
         <div class="gadget">
-          <h2 class="star"><span>Sidebar</span> Menu</h2>
-          <ul class="sb_menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">TemplateInfo</a></li>
-            <li><a href="#">Style Demo</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Archives</a></li>
-            <li><a href="http://sc.chinaz.com">网站模板</a></li>
-          </ul>
+          <h2 class="star"><span>Clock</span></h2>
+          <div class="sb_menu">
+           		<canvas id="clock" width="200px" height="200px"></canvas>
+          </div>
         </div>
         <div class="gadget">
-          <h2 class="star"><span>Sponsors</span></h2>
+          <h2 class="star"><span>我Sponsors</span></h2>
           <ul class="ex_menu">
             <li><a href="http://sc.chinaz.com" title="网站模板">网站模板</a><br />Over 6,000+ Premium Web Templates</li>
             <li><a href="#" title="WordPress Themes">TemplateSOLD</a><br />Premium WordPress &amp; Joomla Themes</li>
