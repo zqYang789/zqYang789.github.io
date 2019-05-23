@@ -1,132 +1,18 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--
-Design by http://sc.chinaz.com
-Released for free under a Creative Commons Attribution 3.0 License
--->
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-<title>Poor Boy's Blog</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<!-- CuFon: Enables smooth pretty custom font rendering. 100% SEO friendly. To disable, remove this section -->
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/clock-canvas.min.js"></script>
-<script type="text/javascript" src="js/cufon-yui.js"></script>
-<script type="text/javascript" src="js/georgia.js"></script>
-<script type="text/javascript" src="js/cuf_run.js"></script>
-<script type="text/javascript">
-	$(function() {
-   	 	$("#clock").drawClock(
-            //{
-                // hCol: 'xxx',// 时针颜色
-                // mCol: 'xxx', // 时针颜色
-                // sCol: 'xxx', // 时针颜色
-                // isNumCol: 'xxx', // 数字所在的点颜色
-                // noNumCol: 'xxx', // 非数字所在的点颜色
-                // dCol: 'xxx', // 中心圈颜色
-            //}
-        );
-    })
-</script>
 </head>
 <body>
-<div class="main">
+	<div style="margin:0 auto;width:600px;heigh:600px;">
+   		<canvas id="c" height="600" width="600"></canvas>
+    </div>
+	
+<script>
+var b = document.body;  
+var c = document.getElementsByTagName('canvas')[0];  
+var a = c.getContext('2d');  
+document.body.clientWidth;  
 
-  <div class="header">
-    <div class="header_resize">
-      <div class="logo"><h1><a href="index.html">Poor Boy<br /></a></h1></div>
-      <div class="menu_nav">
-        <ul>
-          <li class="active"><a href="index.html">首页</a></li>
-          <li><a href="blog.html">博客</a></li>
-          <li><a href="about.html">关于</a></li>
-          <li><a href="contact.html">联系</a></li>
-        </ul>
-        <div class="clr"></div>
-      </div>
-      <div class="clr"></div>
-    </div>
-  </div>
-
-  <div class="content">
-    <div class="content_resize">
-      <div class="mainbar">
-        <div class="article">
-          <h2><span>Template License</span></h2>
-          <p>Posted by <a href="#">Owner</a> | Filed under <a href="#">templates</a>, <a href="#">internet</a></p>
-          <img src="images/img1.jpg" width="613" height="154" alt="img" />
-          <p>This is a free CSS website template by <a href="http://sc.chinaz.com/" title="网站模板">cssmoban.com</a>. This 
-work is distributed under the <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a>, 
-which means that you are free to use it for any personal or commercial purpose provided you credit me in the form of a link back to 
-<a href="http://sc.chinaz.com/" title="网站模板">cssmoban.com</a>.</p>
-          <p><a href="#" class="obg">Read more</a> <span>&nbsp;&bull;&nbsp;</span> <a href="#" class="obg">Comments (3)</a> | March 16, 2015</p>
-        </div>
-        <div class="article">
-          <h2><span>Lorem Ipsum</span> Dolor Sit</h2>
-          <p>Posted by <a href="#">Owner</a> | Filed under <a href="#">templates</a>, <a href="#">internet</a></p>
-          <img src="images/img2.jpg" width="613" height="154" alt="img" />
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. <a href="#">Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo.</a> Donec mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam. Cras fringilla magna. Phasellus suscipit, leo a pharetra condimentum, lorem tellus eleifend magna, eget fringilla velit magna id neque. Curabitur vel urna. In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam.</p>
-          <p><a href="#" class="obg">Read more</a> <span>&nbsp;&bull;&nbsp;</span> <a href="#" class="obg">Comments (7)</a> | March 15, 2015</p>
-        </div>
-      </div>
-      <div class="sidebar">
-        <div class="gadget">
-          <h2 class="star"><span>Clock</span></h2>
-          <div class="sb_menu">
-           		<canvas id="clock" width="200px" height="200px"></canvas>
-          </div>
-        </div>
-        <div class="gadget">
-          <h2 class="star"><span>我Sponsors</span></h2>
-          <ul class="ex_menu">
-            <li><a href="http://sc.chinaz.com" title="网站模板">网站模板</a><br />Over 6,000+ Premium Web Templates</li>
-            <li><a href="#" title="WordPress Themes">TemplateSOLD</a><br />Premium WordPress &amp; Joomla Themes</li>
-            <li><a href="http://www.imhosted.com" title="Affordable Hosting">ImHosted.com</a><br />Affordable Web Hosting Provider</li>
-            <li><a href="http://www.dreamstock.com" title="Stock Photos">DreamStock</a><br />Download Amazing Stock Photos</li>
-            <li><a href="http://www.evrsoft.com" title="Website Builder">Evrsoft</a><br />Website Builder Software &amp; Tools</li>
-            <li><a href="http://www.myvectorstore.com" title="Stock Icons">MyVectorStore</a><br />Royalty Free Stock Icons</li>
-          </ul>
-        </div>
-      </div>
-      <div class="clr"></div>
-    </div>
-  </div>
-
-  <div class="fbg">
-    <div class="fbg_resize">
-      <div class="col c1">
-        <h2>Image Gallery</h2>
-        <a href="#"><img src="images/pix1.jpg" width="56" height="56" alt="pix" /></a>
-        <a href="#"><img src="images/pix2.jpg" width="56" height="56" alt="pix" /></a>
-        <a href="#"><img src="images/pix3.jpg" width="56" height="56" alt="pix" /></a>
-        <a href="#"><img src="images/pix4.jpg" width="56" height="56" alt="pix" /></a>
-        <a href="#"><img src="images/pix5.jpg" width="56" height="56" alt="pix" /></a>
-        <a href="#"><img src="images/pix6.jpg" width="56" height="56" alt="pix" /></a>
-      </div>
-      <div class="col c2">
-        <h2>Lorem Ipsum</h2>
-        <p>Lorem ipsum dolor<br />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo.<br />Donec mattis, purus nec placerat bibendum, dui</p>
-      </div>
-      <div class="col c3">
-        <h2>About</h2>
-        <img src="images/white.jpg" width="56" height="56" alt="pix" />
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo.  llorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum. <a href="#">Learn more...</a></p>
-      </div>
-      <div class="clr"></div>
-    </div>
-  </div>
-  <div class="footer">
-    <div class="footer_resize">
-      <ul class="fmenu">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li><a href="support.html">Support</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contacts</a></li>
-      </ul>
-      <div class="clr"></div>
-    </div>
-  </div>
-</div>
+with(m=Math)C=cos,S=sin,P=pow,R=random;c.width=c.height=f=600;h=-250;function p(a,b,c){if(c>60)return[S(a*7)*(13+5/(.2+P(b*4,4)))-S(b)*50,b*f+50,625+C(a*7)*(13+5/(.2+P(b*4,4)))+b*400,a*1-b/2,a];A=a*2-1;B=b*2-1;if(A*A+B*B<1){if(c>37){n=(j=c&1)?6:4;o=.5/(a+.01)+C(b*125)*3-a*300;w=b*h;return[o*C(n)+w*S(n)+j*610-390,o*S(n)-w*C(n)+550-j*350,1180+C(B+A)*99-j*300,.4-a*.1+P(1-B*B,-h*6)*.15-a*b*.4+C(a+b)/5+P(C((o*(a+1)+(B>0?w:-w))/25),30)*.1*(1-B*B),o/1e3+.7-o*w*3e-6]}if(c>32){c=c*1.16-.15;o=a*45-20;w=b*b*h;z=o*S(c)+w*C(c)+620;return[o*C(c)-w*S(c),28+C(B*.5)*99-b*b*b*60-z/2-h,z,(b*b*.3+P((1-(A*A)),7)*.15+.3)*b,b*.7]}o=A*(2-b)*(80-c*2);w=99-C(A)*120-C(b)*(-h-c*4.9)+C(P(1-b,7))*50+c*2;z=o*S(c)+w*C(c)+700;return[o*C(c)-w*S(c),B*99-C(P(b, 7))*50-c/3-z/1.35+450,z,(1-b/1.2)*.9+a*.1, P((1-b),20)/4+.05]}}setInterval('for(i=0;i<1e4;i++)if(s=p(R(),R(),i%46/.74)){z=s[2];x=~~(s[0]*f/z-h);y=~~(s[1]*f/z-h);if(!m[q=y*f+x]|m[q]>z)m[q]=z,a.fillStyle="rgb("+~(s[3]*h)+","+~(s[4]*h)+","+~(s[3]*s[3]*-80)+")",a.fillRect(x,y,1,1)}',0)
+</script>
 </body>
 </html>
