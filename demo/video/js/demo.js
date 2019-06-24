@@ -45,6 +45,15 @@ $(function () {
     var szCurTime = dateFormat(new Date(), "yyyy-MM-dd");
     $("#starttime").val(szCurTime + " 00:00:00");
     $("#endtime").val(szCurTime + " 23:59:59");
+
+    /*获取到Url里面的参数*/
+
+	$.getUrlParam = function (name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+		var r = window.location.search.substr(1).match(reg);
+		if (r != null) return unescape(r[2]); return null;
+	}
+	
     clickLogin();
 });
 
@@ -155,10 +164,10 @@ function changeWndNum(iType) {
 
 // 登录
 function clickLogin() {
-	var szIP = $.cookie('ssIP');
-		szPort = $.cookie('ssPort'),
-		szUsername = $.cookie('ssUsername'),
-		szPassword = $.cookie('ssPassword');
+	var szIP = $.getUrlParam('ssIP');
+		szPort = $.getUrlParam('ssPort'),
+		szUsername = $.getUrlParam('ssUsername'),
+		szPassword = $.getUrlParam('ssPassword');
 
 	if ("" == szIP || "" == szPort) {
 		return;
