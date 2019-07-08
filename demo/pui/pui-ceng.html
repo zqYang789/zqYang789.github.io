@@ -1,0 +1,135 @@
+<!doctype html> <html lang="en"> <head> <title>评鉴通 - UI</title> <meta charset="utf-8"> <link href="./css/commons.chunk.css?ed62d381b07023f4c212&ed62d381b07023f4c212" rel="stylesheet"><script type="text/javascript" src="./js/commons.bundle.js?ed62d381b07023f4c212&ed62d381b07023f4c212"></script><script type="text/javascript" src="./js/ceng.bundle.js?ed62d381b07023f4c212&ed62d381b07023f4c212"></script><script type="text/javascript" src="./js/vendor.bundle.js?ed62d381b07023f4c212&ed62d381b07023f4c212"></script></head> <body> <div class="pui-menu"> <div class="inner bgc-white" id="innerMenu"> <div class="pui-logo"> <h1 class="pui-title c-primary ffm ant">评鉴通 UI （PUI）</h1> <h6 class="pui-subtitle ffm fs fnormal ant c-gray3">基于 jquery 平台</h6> <div class="sp10"></div> <div class="sp10"></div> </div> <ul class="component-list ffm fb"> <li class="tc"><a href="pui-layout.html" class="c-gray5 ant">布局</a></li> <li class="tc"><a href="pui-form.html" class="c-gray5 ant">表单</a></li> <li class="tc"><a href="pui-fonts.html" class="c-gray5 ant">字体</a></li> <li class="tc cur"><a href="pui-ceng.html" class="c-gray5 ant">弹层</a></li> <li class="tc"><a href="pui-valid.html" class="c-gray5 ant">验证</a></li> <li class="tc"><a href="pui-page.html" class="c-gray5 ant">分页</a></li> <li class="tc"><a href="pui-tab.html" class="c-gray5 ant">标签页</a></li> <li class="tc"><a href="pui-popop.html" class="c-gray5 ant">气泡</a></li> <li class="tc"><a href="pui-calendar.html" class="c-gray5 ant">日历</a></li> <li class="tc"><a href="pui-table.html" class="c-gray5 ant">表格</a></li> <li class="tc"><a href="pui-tree.html" class="c-gray5 ant">树形</a></li> <li class="tc"><a href="pui-css.html" class="c-gray5 ant">CSS</a></li> </ul> </div> </div> <div class="pui-body"> <div class="content"> <h2 class="pui-category c-red fnormal fs20 ffm">弹出层（pui.ceng.js）</h2> <div class="sp20"></div> <a href="javascript:;" class="fl mgb10 mgr10 btn ffm btn-red" id="cengLoading"> <i class="icon icon-addr"></i> <span>loading</span> </a> <a href="javascript:;" class="fl mgb10 mgr10 btn ffm btn-red" id="cengLoadingTxt"> <i class="icon icon-addr"></i> <span>loading 文字</span> </a> <a href="javascript:;" class="fl mgb10 mgr10 btn ffm btn-green" id="cengMsg1"> <i class="icon icon-addr"></i> <span>消息框（成功）</span> </a> <a href="javascript:;" class="fl mgb10 mgr10 btn ffm btn-green" id="cengMsg0"> <i class="icon icon-addr"></i> <span>消息框（错误 or 警告）</span> </a> <a href="javascript:;" class="fl mgb10 mgr10 btn ffm btn-primary" id="cengMsg"> <i class="icon icon-addr"></i> <span>放首歌</span> </a> <a href="javascript:;" class="fl mgb10 mgr10 btn ffm btn-brown" id="cengAlert"> <i class="icon icon-addr"></i> <span>警示框</span> </a> <a href="javascript:;" class="fl mgb10 mgr10 btn ffm btn-blue" id="cengConfirm1"> <i class="icon icon-addr"></i> <span>询问框</span> </a> <a href="javascript:;" class="fl mgb10 mgr10 btn ffm btn-blue" id="cengConfirm2"> <i class="icon icon-addr"></i> <span>询问框 样式二</span> </a> <a href="javascript:;" class="fl mgb10 mgr10 btn ffm btn-green" id="cengHello"> <i class="icon icon-addr"></i> <span>dom 弹出层</span> </a> <a href="javascript:;" class="fl mgb10 mgr10 btn ffm btn-secondary" id="cengHelloRemote"> <i class="icon icon-addr"></i> <span>异步局部视图</span> </a> <a href="javascript:;" class="fl mgb10 mgr10 btn ffm btn-common" id="cengiFrame"> <i class="icon icon-addr"></i> <span>iFrame</span> </a> <div class="sp10"></div> <pre><code class="language-javascript">
+$('#cengLoading').on('click', function(){
+    ceng.loading(null, {
+        time: 3000      // 关闭时间：如果不配置，则一直loading
+    });
+});
+
+$('#cengLoadingTxt').on('click', function(){
+    ceng.loading('<p class="bgc-white pd20 round05">别急，加载中（5s） ...</p>', {
+        opacity: 0.3,   // 遮罩层透明度
+        time: 5000
+    });
+});
+
+ceng.closeLoading()     // 关闭 loading
+
+ceng.closeAll()         // 关闭所有弹出层
+
+$('#cengMsg').on('click', function() {
+    ceng.msg('国乒女团三连冠', {
+        state: 'notice', // resolve || notice
+        time: 3000,
+        end: function(obj){   // 层销毁后的回调，适用于各种类型弹出层，obj为当前弹出层
+            console.log(obj);
+        }
+    })
+});
+
+ceng.msg 语法糖
+
+ceng.msger(txt, status, time, cb)
+
+// txt: 提示语
+// status: 状态（1：ok， 2：warning）
+// time: 持续时间
+// cb： 结束回调
+
+$('cengMsg1').on('click', function(){
+    ceng.msger('国乒女团三连冠', 1, 1500, function(){
+        ceng.alert('ceng.msger 回调事件')
+    })    
+});
+
+$('cengMsg0').on('click', function(){
+    ceng.msger('国乒女团三连冠', 0, 1500, function(){
+        ceng.alert('ceng.msger 回调事件')
+    })
+});
+
+$('#cengAlert').on('click', function() {
+    ceng.alert('&lt;p class="ffs c-gray3">中国女排3-1夺冠&lt;/p>', {
+        title: '提示层',
+        btn: ['确定'],
+        yes: function() {
+            ceng.msg('毫无悬念');
+        }
+    })
+});
+
+$('#cengConfirm1').on('click', function() {
+    ceng.comfirm('&lt;p class="ffs c-gray3">最怕空气突然安静&lt;/p>', {
+        title: '询问层',
+        btn: ['确定', '取消'],   // 默认 ['确定', '取消']
+        yes: function(obj, index){
+            ceng.msg('最怕朋友突然的关心');
+            ceng.close(index);
+        }
+    })
+});
+
+$('#cengConfirm2').on('click', function() {
+    var _htm = '&lt;p>江水春沉沉，上有竹林深&lt;/p>&lt;p>竹叶坏水色，郎亦坏人心&lt;/p>';
+    ceng.comfirm(_htm, {
+        style: 2,
+        complete: function(o, z) {
+            ceng.msg('complete');
+        },
+        yes: function(o, z) {
+            ceng.close(z);
+        }
+    })
+});
+
+$('#cengHello').on('click', function() {
+    ceng.hello({
+        style: 2,
+        content: $('#divHello'),
+        contentType: 'dom', // dom, url
+        closeBtn: false,
+        area: [600, 'auto'],
+        btn: 0
+    })
+});
+
+$('#cengHelloRemote').on('click', function() {
+    ceng.hello({
+        title: '异步远程dom',
+        content: 'assets/admin/v4.0.3/remotePage/demo.html',
+        contentType: 'url', // dom, url
+        contentData: 'a=1&b=2&c=3',
+        area: [800, 'auto'],
+        btn: ['按钮一', '按钮二', '按钮三'],
+        btn1: function() {},
+        btn2: function() {
+            ceng.alert('abc', {
+                yes: function() {
+                    ceng.closeAll();
+                }
+            })
+        },
+        btn3: function() {}
+    })
+});
+
+$('#cengiFrame').on('click', function() {
+    ceng.iframe({
+        title: '2016国际体验设计大会',
+        url: 'http://www.cepin.com',
+        area: [1200, 600],
+        yes: function() {}
+    })
+});
+</code></pre> <br> <pre><code class="language-html">
+&lt;!-- 指定 dom内容 -->
+&lt;div class="ceng-ready" id="divHello">
+    &lt;div class="pd30">
+        &lt;p class="lh34 fbold">有没有一首歌会让你想起我&lt;/p>
+        &lt;ul class="lh24">
+            &lt;li>1、&lt;span> 灯熄灭了，月亮是寂寞的眼&lt;/span>&lt;/li>
+            &lt;li>2、&lt;span> 静静看着，谁孤枕难眠，远处传来那首熟悉的歌&lt;/span>&lt;/li>
+            &lt;li>3、&lt;span> 我们都活在这个城市里面，却为何没有再见面&lt;/span>&lt;/li>
+        &lt;/ul>
+    &lt;/div>
+&lt;/div>    
+</code></pre> <div class="sp30"></div> <div class="sp30"></div> </div> <div class="sp30"></div> <div class="sp30"></div> </div> <div class="ceng-ready" id="divHello"> <div class="pd30"> <p class="lh34 fbold">有没有一首歌会让你想起我</p> <ul class="lh24"> <li>1、<span> 灯熄灭了，月亮是寂寞的眼</span></li> <li>2、<span> 静静看着，谁孤枕难眠，远处传来那首熟悉的歌</span></li> <li>3、<span> 我们都活在这个城市里面，却为何没有再见面</span></li> </ul> </div> </div> </body> </html> 
