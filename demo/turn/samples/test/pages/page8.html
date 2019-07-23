@@ -1,0 +1,105 @@
+<div style="margin-left:10px;margin-right:10px;margin-top:20px;line-height:25px;font-size: 10px;">
+	<p>
+		<b>各流域情况：</b>
+	</p>
+	<p style="text-indent:2em;">
+		与上年比，各流域分别偏少12.5%~32.0%，其中韩江减幅32.0%；与常年比，西、北江流域分别偏多0.5%和2.6%，其余各流域分别偏少1.5%~12.4%，其中粤西诸河减幅12.4%（见图2）。
+	</p>
+</div>
+<div id="div2" style="width:450px;height:280px;margin:0 auto;"></div>
+	<script>
+	require.config({
+            paths: {
+                echarts: 'http://echarts.baidu.com/build/dist'
+            }
+        });
+	require(
+                [
+                    'echarts',
+                	'echarts/chart/line', 
+					'echarts/chart/bar' 
+                  
+                ],
+        function (ec) {
+                    var myChartPercent2 = ec.init(document.getElementById('div2')); 
+ 
+                  var option2 = {
+                        title : {
+                            text: '图2   2014年各流域平均年降水量与上年、常年比较',
+                            x   : 'center',
+                            y	: '260',
+                            textStyle: {
+					            fontSize: 10,
+					            fontWeight: 'bolder',
+					            color: '#333'          
+					        },
+                           
+                        },
+                        tooltip : {
+                            trigger: 'axis'
+                            
+                          
+                        },
+                        legend: {
+                            data:['2014年','2013年','常年'],
+                            x: 'right',
+                            y: '30'
+                        },
+                        toolbox: {
+                            show : false,
+                            orient: 'vertical',
+                            x: 'right',
+       						y: 'center',
+                            feature : {
+                                mark : {show: true},
+                                dataView : {show: true, readOnly: false},
+                                magicType : {show: true, type: ['line', 'bar']},
+                                restore : {show: true},
+                                saveAsImage : {show: true}
+                            }
+                        },
+                        calculable : true,
+                        xAxis : [
+                            {	name :'地区',
+                                type : 'category',
+                                data : ['西江','北江','东江','珠江三角洲','韩江','粤东诸河','粤西诸河']
+                            }
+                        ],
+                        yAxis : [
+                            {	name :  '降水量（mm）',
+                                type : 'value'
+                               
+                            }
+                        ],
+                        series : [
+                            
+                            {
+                                name:'2014年',
+                                type:'bar',
+                                barGap:'5%' ,
+                                data:[1600, 1800, 1650, 1700, 1400, 1900, 1690]
+                                
+                            },
+                            {
+                                name:'2013年',
+                                type:'bar',
+                                barGap:'5%' ,
+                                data:[1900, 2100, 2150, 2200, 2280, 2650, 2400]
+                               
+                            },
+                            {
+                                name:'常年',
+                                type:'bar',
+                                barGap:'5%' ,
+                                data:[1600, 1750, 1700, 2200, 1800, 1900, 1800]
+                               
+                            },
+                        ]
+                    };
+                    
+ 
+                    myChartPercent2.setOption(option2); 
+                }
+             );
+</script>
+<span class="page-number">4</span>

@@ -1,0 +1,154 @@
+<div style="margin-left:10px;margin-right:10px;margin-top:20px;line-height:25px;font-size: 10px;">
+	<table style="font-size: 10px;margin-top: 10px;text-align: center;" border="1" align="center">
+		<tr height="30px;">
+			
+			<td>汕尾</td>
+			<td>东莞</td>
+			<td>中山</td>
+			<td>江门</td>
+			<td>阳江</td>
+			<td>湛江</td>
+			<td>茂名</td>
+			<td>肇庆</td>
+			<td>潮州</td>
+			<td>揭阳</td>
+			<td>云浮</td>
+		</tr>
+		<tr height="30px;">
+			
+			<td>2279.1</td>
+			<td>1626.8</td>
+			<td>1652.1</td>
+			<td>1729.2</td>
+			<td>1778.4</td>
+			<td>1357.2</td>
+			<td>1717.5</td>
+			<td>2043.5</td>
+			<td>1579.0</td>
+			<td>1824.1</td>
+			<td>1441.3</td>
+		</tr>
+	</table>
+</div>
+<div style="margin-left:10px;margin-right:10px;margin-top:20px;line-height:25px;font-size: 10px;">
+	<center style="font-size: 12px;">表2   2014年各流域降水量表</center>
+	<table style="font-size: 10px;margin-top: 10px;text-align: center;margin-left: 20px;" border="1" align="center">
+		<tr height="30px;">
+			<td>流域</td>
+			<td>西江</td>
+			<td>北江</td>
+			<td>东江</td>
+			<td>珠江三角洲</td>
+			<td>韩江</td>
+			<td>粤东诸河</td>
+			<td>粤西诸河</td>
+			
+		</tr>
+		<tr height="30px;">
+			<td>降水量</td>
+									
+			<td>1585.1</td>
+			<td>1828.9</td>
+			<td>1599.3</td>
+			<td>1777.8</td>
+			<td>1421.6</td>
+			<td>1923.9</td>
+			<td>1604.7</td>
+			
+		</tr>
+	</table>
+	<p style="text-indent:2em;">
+		各市情况  与上年比，广州基本持平，其余各市偏少11.9%～36.8%，其中阳江减幅36.8%；与常年比，除惠州、深圳、肇庆、广州、汕尾、清远市及顺德区偏多0.9%～11.1%外，其余各市分别偏少1.5%～20.8%，其中阳江市减幅最大,（如图1）
+	</p>
+</div>
+<div id="div1" style="width:500px;height:250px;margin-top: -25px;" >
+
+</div>
+
+	<script>
+	require.config({
+            paths: {
+                echarts: 'http://echarts.baidu.com/build/dist'
+            }
+        });
+	require(
+                [
+                    'echarts',
+                	'echarts/chart/line', 
+					'echarts/chart/bar' 
+                  
+                ],
+        function (ec) {
+                    var myChartPercent = ec.init(document.getElementById('div1')); 
+ 
+                   option = {
+                        title : {
+                            text: '图1   2014年各市平均年降水量与常年比较',
+                            x   : 'center',
+                            y   : '230',
+                             textStyle: {
+					            fontSize: 10,
+					            fontWeight: 'bolder',
+					            color: '#333'          
+					        },
+					                        
+                        },
+                        tooltip : {
+                            trigger: 'axis',
+                            
+                            formatter: function(params) {
+                                return params[0].name + '&nbsp;'
+                                       + params[0].seriesName + ' : ' + params[0].value + '%'
+                                      ;
+                            }
+                        },
+                        
+                        toolbox: {
+                            show : false,
+                            orient: 'vertical',
+                            x: 'right',
+       						y: 'center',
+                            feature : {
+                                mark : {show: true},
+                                dataView : {show: true, readOnly: false},
+                                magicType : {show: true, type: ['line', 'bar']},
+                                restore : {show: true},
+                                saveAsImage : {show: true}
+                            }
+                        },
+                        calculable : true,
+                        xAxis : [
+                            {	name :'地区',
+                                type : 'category',
+                                data : ['阳江','河源','江门','梅州','湛江','潮州','珠海','揭阳','中山','韶关','云浮','佛山','茂山','东莞','汕头','惠州','深圳','肇庆','广州','汕尾','清远','顺德']
+                            }
+                        ],
+                        yAxis : [
+                            {	name :  '（%）',
+                                type : 'value',
+                                min  : '-22',
+                                max  : '13'
+                            }
+                        ],
+                        series : [
+                            
+                            {
+                                name:'降水量',
+                                type:'bar',
+                               
+                                data:[-21, -15, -13, -12, -10, -9, -8, -7, -6, -5, -4, -4,-3,-2,-1,1,2,4,7,7,8,10]
+                               
+                               	
+                                
+                            }
+                        ]
+                    };
+                    
+ 
+                    myChartPercent.setOption(option); 
+                }
+             );
+</script>
+
+<span class="page-number">3</span>
+
