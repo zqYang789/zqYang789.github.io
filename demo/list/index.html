@@ -1,0 +1,206 @@
+<!--
+ * SS_FILE功能：首页
+ * SS_FILE描述：
+ * SS_FILE参数：
+ * SS_FILE作者：sshcc
+ * SS_FILE日期：2019-12-13 09:10
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	
+    <title>河长制</title>
+	
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	
+	<!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/lightbox.css">
+	<link rel="stylesheet" href="fonts/stylesheet.css">
+	
+	<!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+	<script src="js/jquery-2.1.1.js"></script>
+</head>
+
+<body class="index-page">
+	<div id="page-content">
+	
+		<section class="box-content box-6">
+			<div class="container">
+				<div class="row">
+					<div class="heading">
+						<h1 class="title">河长制</h1>
+					</div>
+				</div>
+				
+				<div class="isotopeContainer">
+					<div class="col-lg-3 col-sm-4 col-md-6 isotopeSelector art">
+						<div class="portfolio-box zoom-effect">
+							<img src="images/image21.jpg" class="img-responsive" alt="">
+							<div class="portfolio-box-caption">
+								<div class="portfolio-box-caption-content">
+									<div class="project-name">
+										德州
+									</div>
+<!--
+									<div class="project-category">
+										德州
+									</div>
+-->
+									<div class="project-social">
+										<ul class="list-inline">
+											<li><a href="http://222.133.41.37:9500/" target="_blank"><i class="fa fa-link"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-4 col-md-6 isotopeSelector art">
+						<div class="portfolio-box zoom-effect">
+							<img src="images/image22.jpg" class="img-responsive" alt="">
+							<div class="portfolio-box-caption">
+								<div class="portfolio-box-caption-content">
+									<div class="project-name">
+										武城
+									</div>
+									<div class="project-social">
+										<ul class="list-inline">
+											<li><a href="http://222.133.41.37:9601/" target="_blank"><i class="fa fa-link"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-4 col-md-6 isotopeSelector illustrations">
+						<div class="portfolio-box zoom-effect">
+							<img src="images/image23.jpg" class="img-responsive" alt="">
+							<div class="portfolio-box-caption">
+								<div class="portfolio-box-caption-content">
+									<div class="project-name">
+										经开
+									</div>
+									<div class="project-social">
+										<ul class="list-inline">
+											<li><a href="http://222.133.41.37:9603/" target="_blank"><i class="fa fa-link"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-4 col-md-6 isotopeSelector photography">
+						<div class="portfolio-box zoom-effect">
+							<img src="images/image24.jpg" class="img-responsive" alt="">
+							<div class="portfolio-box-caption">
+								<div class="portfolio-box-caption-content">
+									<div class="project-name">
+										宁津
+									</div>
+									<div class="project-social">
+										<ul class="list-inline">
+											<li><a href="http://222.133.41.37:9605/" target="_blank"><i class="fa fa-link"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+					<div class="col-lg-3 col-sm-4 col-md-6 isotopeSelector illustrations">
+						<div class="portfolio-box zoom-effect">
+							<img src="images/image25.jpg" class="img-responsive" alt="">
+							<div class="portfolio-box-caption">
+								<div class="portfolio-box-caption-content">
+									<div class="project-name">
+										德城
+									</div>
+									<div class="project-social">
+										<ul class="list-inline">
+											<li><a href="http://222.133.41.37:9607/" target="_blank"><i class="fa fa-link"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-4 col-md-6 isotopeSelector photography">
+						<div class="portfolio-box zoom-effect">
+							<img src="images/image26.jpg" class="img-responsive" alt="">
+							<div class="portfolio-box-caption">
+								<div class="portfolio-box-caption-content">
+									<div class="project-name">
+										夏津
+									</div>
+									<div class="project-social">
+										<ul class="list-inline">
+											<li><a href="http://120.224.193.10:9500/" target="_blank"><i class="fa fa-link"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				
+				</div>
+			</div>
+		</section>
+		
+		
+		
+		
+	</div>
+		 
+    <script src="js/bootstrap.min.js"></script>
+	
+	<!-- Light Box -->
+	<script src="js/lightbox-plus-jquery.min.js"></script>
+
+	<!-- Plugin JavaScript -->
+	<script src="js/isotope.min.js"></script>
+	<script>
+	jQuery(document).ready(function($) {
+		var myTheme = window.myTheme || {},
+		$win = $( window );
+		myTheme.Isotope = function () {
+			// 4 column layout
+			var isotopeContainer = $('.isotopeContainer');
+			if( !isotopeContainer.length || !jQuery().isotope ) return;
+			$win.load(function(){
+				isotopeContainer.isotope({
+					itemSelector: '.isotopeSelector'
+				});
+				$('.isotopeFilters').on( 'click', 'a', function(e) {
+					$('.isotopeFilters').find('.active').removeClass('active');
+					$(this).parent().addClass('active');
+					var filterValue = $(this).attr('data-filter');
+					isotopeContainer.isotope({ filter: filterValue });
+					e.preventDefault();
+				});
+				
+			});
+		};
+		myTheme.Isotope();
+
+	});</script>
+	
+	<!-- carousel -->
+	<script src="js/circletype.min.js"></script>
+	<script src="js/plugins.js"></script>
+    <script>
+		$('#logo').circleType({fluid:true,radius: 360});
+	</script>
+	
+				
+	
+</body>
+
+</html>
